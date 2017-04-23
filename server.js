@@ -8,7 +8,7 @@ var
 // init and configure server
 
 require('./src/server').create({
-  port: 9000,
+  port: 1337,
   routes: {
     state: {
       failAction: 'log'

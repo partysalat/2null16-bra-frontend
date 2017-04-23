@@ -1,4 +1,4 @@
-var
+const
   webpack = require('webpack'),
   mkdirp = require('mkdirp'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -22,28 +22,26 @@ module.exports = {
     }
 
   ],
-  stylus: {
-    use: [
-      require('bootstrap-styl')()
-    ]
-  },
+  // stylus: {
+  //   use: [
+  //     require('bootstrap-styl')()
+  //   ]
+  // },
   module: {
-    loaders: [
-      {
-        test: /\.json?$/,
-        loader: 'json'
-      },
+    rules: [
       {
         test: /\.styl/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize&autoprefixer!stylus-loader')
+        use: ExtractTextPlugin.extract({
+          use:[
+            // {loader:'style-loader'},
+            {loader:'css-loader',options:{minimize:true,autoprefixer:true}},
+            {loader:'stylus-loader'}
+          ]
+        })
       },
       {
         test: /\.pug/,
-        loader: 'pug-static'
-      },
-      {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
+        use: 'pug-static-loader'
       }
     ]
   }
