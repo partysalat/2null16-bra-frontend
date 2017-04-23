@@ -1,6 +1,6 @@
 'use strict';
 
-var
+const
   gulp = require('gulp'),
   del = require('del');
 

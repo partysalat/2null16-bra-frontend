@@ -1,11 +1,11 @@
 'use strict';
 
-var
-  server,
+const
   hapi = require('hapi'),
   logger = require('./utils/logger'),
   routes = require('hapi-auto-routes');
 
+let server;
 
 function create(connectionSettings, callback) {
 

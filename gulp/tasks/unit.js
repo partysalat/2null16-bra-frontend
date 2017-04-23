@@ -1,14 +1,13 @@
-/*jslint node: true*/
 'use strict';
 
-var
+const
   gulp = require('gulp'),
-  config = require("./../config"),
+  config = require('./../config'),
   gutil = require('gulp-util'),
   karma = require('karma');
 
 gulp.task('_unit:browser:once', function(done) {
-  gutil.log(gutil.colors.green("UNIT BROWSER STARTED"));
+  gutil.log(gutil.colors.green('UNIT BROWSER STARTED'));
   new karma.Server({
     configFile: config.paths.test.config,
     singleRun: true
@@ -18,7 +17,7 @@ gulp.task('_unit:browser:once', function(done) {
 });
 
 gulp.task('_unit:browser:watch', function() {
-  gutil.log(gutil.colors.green("UNIT BROWSER STARTED"));
+  gutil.log(gutil.colors.green('UNIT BROWSER STARTED'));
   new karma.Server({
     configFile: config.paths.test.config
   }).start();

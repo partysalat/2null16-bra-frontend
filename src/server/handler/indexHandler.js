@@ -1,7 +1,7 @@
 'use strict';
-var _ = require('lodash');
+const _ = require('lodash');
 
-var
+const
   manifest = require('./../../../target/rev-manifest.json'),
   jsBundleName = _.get(manifest.main,0),
   cssBundleName = _.get(manifest.main,1);

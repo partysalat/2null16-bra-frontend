@@ -1,13 +1,13 @@
 'use strict';
 
-var
+const
   gulp = require('gulp'),
 
-  bs = require("browser-sync"),
-  config = require("./../config"),
+  bs = require('browser-sync'),
+  config = require('./../config'),
   server = require('gulp-develop-server');
 
-gulp.task("_server:restart", function (done) {
+gulp.task('_server:restart', function (done) {
   server.restart(function (err) {
 
     if (!err) {
@@ -34,7 +34,7 @@ gulp.task('_server', function (done) {
   }, function () {
 
     bs({
-      proxy: "http://localhost:" + config.port,
+      proxy: 'http://localhost:' + config.port,
       open: false
     });
 

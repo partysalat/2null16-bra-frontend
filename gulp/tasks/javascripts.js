@@ -1,10 +1,10 @@
 'use strict';
 
-var
-  gulp = require("gulp"),
-  webpack = require("webpack"),
-  _ = require("lodash"),
-  webpackStream = require("webpack-stream");
+const
+  gulp = require('gulp'),
+  webpack = require('webpack'),
+  _ = require('lodash'),
+  webpackStream = require('webpack-stream');
 
 const
   webpackWatchConfig = require('./../../webpack/webpack.watch.config'),
@@ -19,7 +19,7 @@ gulp.task('_scripts', function () {
 });
 
 function compile(webpackConfig, callback) {
-  return gulp.src("I_DOnT_EXisST")
+  return gulp.src('I_DOnT_EXisST')
     .pipe(webpackStream(webpackConfig, webpack, function(){
       setTimeout(callback || _.noop,1000);
     }))
