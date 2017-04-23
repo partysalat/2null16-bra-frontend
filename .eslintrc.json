@@ -5,8 +5,23 @@
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "Inferno"
+        }
+    },
+    "extends": ["eslint:recommended","plugin:react/recommended"],
     "rules": {
+        "react/no-deprecated": "off",
         "indent": [
             "error",
             2

@@ -22,13 +22,14 @@ module.exports = {
     }
 
   ],
-  // stylus: {
-  //   use: [
-  //     require('bootstrap-styl')()
-  //   ]
-  // },
   module: {
     rules: [
+      {
+        test:/\.js?$/,
+        use:'babel-loader',
+        exclude:/node_modules/
+      },
+
       {
         test: /\.styl/,
         use: ExtractTextPlugin.extract({
