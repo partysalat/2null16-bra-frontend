@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.6",
-    "cheerio": "^0.22.0",
     "hapi": "^15.1.1",
     "hapi-auto-routes": "^1.0.3",
     "hoek": "^4.1.0",
@@ -26,10 +25,6 @@
     "vision": "^4.1.0"
   },
   "devDependencies": {
-    "angular": "^1.5.8",
-    "angular-mocks": "^1.5.8",
-    "angular-resource": "^1.5.8",
-    "angular-ui-router": "^0.3.2",
     "autoprefixer": "^6.5.3",
     "bootstrap-styl": "^5.0.8",
     "browser-sync": "^2.17.1",
