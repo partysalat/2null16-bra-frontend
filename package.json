@@ -9,7 +9,7 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "build": "npm run clean & gulp build",
-    "watch": "gulp",
+    "watch": "npm run unit:watch & gulp",
     "start": "gulp start",
     "unit:server": "ava src/server/**/*.spec.* --source 'src/server/**/*!(spec).js'",
     "unit:browser": "ava src/browser/**/*.spec.js --source 'src/browser/**/*!(spec).js'",
