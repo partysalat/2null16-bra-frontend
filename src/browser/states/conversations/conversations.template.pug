@@ -1,0 +1,17 @@
+.conversation
+    ul
+        li
+            a.btn.btn-default(ui-sref="inbox.category({ cat:'all'})",ui-sref-opts="{reload: false}") Eingang
+        li
+            a.btn.btn-default(ui-sref="inbox.category({ cat:'favorite'})",ui-sref-opts="{reload: false}") Markiert
+        li
+            a.btn.btn-default(ui-sref="inbox.category({ cat:'trash'})",ui-sref-opts="{reload: false}") Papierkorb
+        li
+            a.btn.btn-default(ui-sref="inbox.category({ cat:'spam'})",ui-sref-opts="{reload: false}") Spam
+
+.conversation-list
+    div(data-ng-repeat="conversation in $ctrl.conversations")
+        a(data-ng-bind="conversation.name" ui-sref="inbox.category.details({ conversationId:conversation.id})")
+
+ui-view
+
