@@ -1,9 +1,6 @@
-/*jslint node: true*/
-"use strict";
-
-var
+const
   Hoek = require('hoek'),
-  logger =require("./src/server/utils/logger");
+  logger =require('./src/server/utils/logger');
 
 // init and configure server
 
@@ -22,7 +19,7 @@ require('./src/server').create({
   }
   server.start(function (startupError) {
     Hoek.assert(!startupError, startupError);
-    logger.info('du trinkst running at: ', server.info.uri);
+    logger.info('overjizzle bra running at: ', server.info.uri);
 
     if (process.send) {
       process.send('server_started');

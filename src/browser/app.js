@@ -8,7 +8,7 @@ class MyComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0
+      counter: 10
     };
   }
   render() {
@@ -25,3 +25,4 @@ Inferno.render(
   <MyComponent />,
   document.getElementById('app')
 );
+export default MyComponent;

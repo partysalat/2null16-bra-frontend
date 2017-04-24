@@ -1,4 +1,4 @@
-'use strict';
+
 
 const
   hapi = require('hapi'),
@@ -14,11 +14,13 @@ function create(connectionSettings, callback) {
 
 
   server.register([
+    require('hapi-auth-basic'),
     require('inert'),
+    require('h2o2'),
     require('vision')
   ],
     function (pluginInitializationErrors) {
-
+      server.auth.strategy('simple', 'basic', { validateFunc: require('./auth/validate') });
       if (pluginInitializationErrors) {
         logger.error('app failed to start: ', pluginInitializationErrors);
         callback(pluginInitializationErrors);
